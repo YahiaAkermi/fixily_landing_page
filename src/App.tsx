@@ -10,7 +10,7 @@ import Footer from "./components/sections/Footer";
 
 function App() {
   return (
-    <>
+    <div className="custom-scrollbar overflow-auto h-screen">
       <Navbar />
       <HeroSection />
       <Explore />
@@ -20,7 +20,7 @@ function App() {
       <QaSection />
       <ArticleSection />
       <Footer />
-    </>
+    </div>
   );
 }
 
