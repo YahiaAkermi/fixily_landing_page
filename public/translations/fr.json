@@ -1,0 +1,62 @@
+{
+  "navbar": {
+    "rejoindre": "Rejoindre",
+    "seconnecter": "Se Connecter",
+    "mesdemandes": "Mes Demandes",
+    "services": "Services",
+    "language": {
+      "language": "language",
+      "arabe": "arabe",
+      "francais": "français"
+    }
+  },
+  "hero": {
+    "h1": "Les Meilleurs Professionnels en Algérie:<br /> Qualifiés, à Proximité et à Votre Service!",
+    "subtitle": "Téléchargez l'application gratuitement sur:"
+  },
+  "explore": {
+    "h1": "Vous avez des travaux à faire? Nous vous trouvons quelqu'un en quelques minutes",
+    "placeholder": "Trouvez une service..."
+  },
+  "categories": {
+    "h1": "Explorer Nos Catégories",
+    "btn_text": "Voir plus"
+  },
+  "howSection": {
+    "h1": "Comment ça marche?",
+    "para": "Publiez une demande, nos professionnels répondent, et choisissez le meilleur profil.<br /> Simple, rapide, efficace. Voir comment ça marche.",
+    "etape": "Étape"
+  },
+  "workersSection": {
+    "h1": "Avez-vous une compétence?",
+    "subtitle": "Gagnez plus d'argent et développez votre travail avec <br/> Fixily, obtenez plus de clients dans votre région.",
+    "para": "Fixily est le moyen fiable d'obtenir le travail que vous souhaitez. Recevez un<br/> flux constant de missions locales correspondant à vos compétences.<br/> Acceptez de grands projets ou des petits travaux pour remplir votre emploi du<br/> temps - le choix vous appartient!"
+  },
+  "qa": {
+    "h1": "Questions Fréquentes",
+    "sub": "Retrouvez ici les réponses aux questions les plus courantes sur notre <br/> service, son fonctionnement, les tarifs, et les conditions.",
+    "q1": "C’est quoi Fixily?",
+    "a1": "Fixyli est une plateforme qui met en relation des clients avec des professionnels qualifiés pour divers services, tels que réparations, installations, et entretien, de manière simple et rapide.",
+    "q2": "Comment je peux trouver des professionnels ?",
+    "a2": "",
+    "q3": "Combien ça me coûte pour trouver des professionnels?",
+    "a3": "",
+    "q4": "puis-je être client et professionnel  à la fois?",
+    "a4": "",
+    "q5": "Je ne trouve pas de réponse à ma question",
+    "a5": ""
+  },
+  "articles": {
+    "h1": "Articles Récents",
+    "btn_text": "Tous les articles"
+  },
+  "footer": {
+    "txt_below_logo": "Besoin d'aide ? Trouvez des artisans de<br/> confiance et qualifiés sur Fixily pour <br/>toutes vos tâches !",
+    "contanctez_nous": "Contactez-nous",
+    "copyright": "Copyright © Fixily",
+    "droits": "Tous droits réservés",
+    "mentions": "Mentions Légales",
+    "condition": "Conditions Générales D'utilisation",
+    "politique": "Politique de Confidentialité"
+  }
+}
