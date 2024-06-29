@@ -24,6 +24,7 @@ export const categories = [
 export const steps = [
   {
     imgUrl: "/assets/images/step1.png",
+    order: "1",
     title_fr: "Publiez une Demande",
     title_ar: "انشر طلبًا",
     content_fr: "Postez votre tâche fournissez les détails nécessaires.",
@@ -31,6 +32,7 @@ export const steps = [
   },
   {
     imgUrl: "/assets/images/step2.png",
+    order: "2",
     title_fr: "Nos Pros Répondent",
     title_ar: "سيجيب محترفونا",
     content_fr:
@@ -39,6 +41,7 @@ export const steps = [
   },
   {
     imgUrl: "/assets/images/step3.png",
+    order: "3",
     title_fr: "Choisissez un Professionnel",
     title_ar: " اختر محترفا",
     content_fr:

@@ -1,15 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 const EmploymentSection = () => {
   const { t, i18n } = useTranslation();
 
+  const [language, setLanguage] = useState(navigator.language);
+
   useEffect(() => {
     const lng = navigator.language;
     i18n.changeLanguage(lng);
+    setLanguage(lng);
   }, []);
   return (
-    <section className="h-auto w-full flex justify-center items-center font-lato  py-8">
+    <section
+      className={`h-auto w-full flex justify-center items-center font-lato  py-8 `}
+    >
       <div className="flex max-xl:flex-col max-xl:gap-4 gap-5 items-center max-md:w-full max-md:px-5">
         <img
           src="/assets/images/workers.png"
@@ -22,7 +27,11 @@ const EmploymentSection = () => {
             alt="shape"
             className="max-md:hidden w-[767px] h-auto max-md:w-[300px] "
           />
-          <div className="md:absolute top-[60px] left-[75px] z-10 ">
+          <div
+            className={`md:absolute top-[60px] left-[75px] z-10 text-center ${
+              language == "ar" ? "md:text-right px-7" : ""
+            }`}
+          >
             <div className="w-full flex flex-col justify-between gap-3 px-4 py-3 max-md:gap-6">
               <h1 className="text-[46px] max-md:text-[24px] max-lg:text-[32px] font-bold text-white ">
                 {t("workersSection.h1")}
