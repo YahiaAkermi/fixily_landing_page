@@ -36,7 +36,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q1")}
@@ -54,7 +54,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q2")}
@@ -72,7 +72,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q3")}
@@ -90,7 +90,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q4")}
@@ -108,7 +108,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q5")}

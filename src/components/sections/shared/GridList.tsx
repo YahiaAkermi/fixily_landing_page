@@ -16,7 +16,10 @@ const GridList = ({ categories, language }: CategoryProps) => {
       {categories.map((category) => (
         <li key={category.id} className="flex flex-col items-center gap-5">
           <img
-            src={category.image}
+            src={
+              // category.image ||
+              "/assets/images/renovation.png"
+            }
             alt={language === "ar" ? category.image : category.name_en}
             className="object-cover"
           />
