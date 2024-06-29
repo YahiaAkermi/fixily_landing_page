@@ -46,3 +46,33 @@ export const steps = [
     content_ar: " اطلع على الملفات الشخصية واختر المحترف الذي يناسبك",
   },
 ];
+
+export const articles = [
+  {
+    imgUrl: "/assets/images/electricien.png",
+    title_fr: "Déménagement Sans Stress en Algérie",
+    title_ar: "الانتقال بدون إجهاد في الجزائر",
+    content_fr:
+      "Il y a juste assez d'espace ici pour plusieurs lignes de texte. Assurez-vous que votre message soit clair et concis.",
+    content_ar:
+      "يوجد هنا مساحة كافية لعدة أسطر من النص. تأكد من أن رسالتك واضحة ومختصرة.",
+  },
+  {
+    imgUrl: "/assets/images/renovation.png",
+    title_fr: "Comment trouver un dépannage?",
+    title_ar: "كيف أجد خدمة إصلاح؟ ",
+    content_fr:
+      "Il y a juste assez d'espace ici pour plusieurs lignes de texte. Assurez-vous que votre message soit clair et concis.",
+    content_ar:
+      "يوجد هنا مساحة كافية لعدة أسطر من النص. تأكد من أن رسالتك واضحة ومختصرة.",
+  },
+  {
+    imgUrl: "/assets/images/plombier.png",
+    title_fr: "Quel climatiseur convient le mieux à votre maison?",
+    title_ar: " ما هو مكيف الهواء الأنسب لمنزلك؟",
+    content_fr:
+      "Il y a juste assez d'espace ici pour plusieurs lignes de texte. Assurez-vous que votre message soit clair et concis.",
+    content_ar:
+      "يوجد هنا مساحة كافية لعدة أسطر من النص. تأكد من أن رسالتك واضحة ومختصرة.",
+  },
+];

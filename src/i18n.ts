@@ -57,6 +57,9 @@ i18n
             q5: "Je ne trouve pas de réponse à ma question",
             a5: "",
           },
+          articles: {
+            h1: "Articles Récents",
+          },
         },
       },
       ar: {
@@ -102,6 +105,9 @@ i18n
             a4: "",
             q5: "لم أجد إجابة لسؤالي.",
             a5: "",
+          },
+          articles: {
+            h1: "مقالات حديثة",
           },
         },
       },

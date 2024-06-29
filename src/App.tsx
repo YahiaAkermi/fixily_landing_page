@@ -5,6 +5,7 @@ import Categories from "./components/sections/Categories";
 import HowSection from "./components/sections/HowSection";
 import EmploymentSection from "./components/sections/EmploymentSection";
 import QaSection from "./components/sections/QaSection";
+import ArticleSection from "./components/sections/ArticleSection";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <HowSection />
       <EmploymentSection />
       <QaSection />
+      <ArticleSection />
     </>
   );
 }

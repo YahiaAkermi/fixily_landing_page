@@ -11,9 +11,10 @@ type Step = {
 
 type StepsProps = {
   steps: Step[];
+  showEtape: boolean;
 };
 
-const GridSteps = ({ steps }: StepsProps) => {
+const GridSteps = ({ steps, showEtape }: StepsProps) => {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -32,7 +33,11 @@ const GridSteps = ({ steps }: StepsProps) => {
               className="object-cover h-[250px] w-[250px]"
             />
             <div className="flex flex-col gap-3 text-center">
-              <h3 className="text-[24px]  font-semibold text-myblack text-center">
+              <h3
+                className={`text-[24px]  font-semibold text-myblack text-center ${
+                  !showEtape ? "hidden" : "inline-block"
+                }`}
+              >
                 {`${t("howSection.etape")} ${index + 1}`}
               </h3>
               <p className="text-[24px]  font-semibold text-myblack text-center">
