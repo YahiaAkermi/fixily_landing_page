@@ -35,6 +35,7 @@ i18n
           howSection: {
             h1: "Comment ça marche?",
             para: "Publiez une demande, nos professionnels répondent, et choisissez le meilleur profil.<br /> Simple, rapide, efficace. Voir comment ça marche.",
+            etape: "Étape",
           },
         },
       },
@@ -60,6 +61,7 @@ i18n
           howSection: {
             h1: "كيف يعمل؟",
             para: "انشر طلباً، سيجيب محترفونا، واختر أفضل ملف شخصي. بسيط، سريع، وفعال. شاهد كيف يعمل",
+            etape: "خطوة",
           },
         },
       },
