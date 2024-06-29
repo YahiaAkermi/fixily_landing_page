@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
@@ -23,11 +22,14 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState(navigator.language);
 
   useEffect(() => {
     const lng = navigator.language;
     i18n.changeLanguage(lng);
+    setLanguage(lng);
   }, []);
+
   return (
     <nav className="w-full flex justify-between items-center text-4xl h-[100px] px-4 xl:px-20 bg-secondary">
       <div className="">
@@ -41,32 +43,91 @@ const Navbar = () => {
         <Select>
           <SelectTrigger className="text-myblack font-bold w-[180px] bg-secondary">
             <img src="/assets/images/translate.png" alt="translate" />
-            <SelectValue placeholder={navigator.language} className="hidden" />
+            <SelectValue
+              placeholder={t("navbar.language.language")}
+              className="hidden"
+            />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectLabel>Fruits</SelectLabel>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
+              <SelectItem value="français">
+                <div
+                  className={`${
+                    language.substring(0, 2) === "ar" ? "text-right" : ""
+                  } w-full`}
+                >
+                  {t("navbar.language.francais")}
+                </div>
+              </SelectItem>
+              <SelectItem value="arabe">
+                <div
+                  className={`${
+                    language.substring(0, 2) === "ar" ? "text-right" : ""
+                  } w-full`}
+                >
+                  {t("navbar.language.arabe")}
+                </div>
+              </SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
 
         <DropdownMenu>
           <DropdownMenuTrigger className="text-myblack text-base font-medium flex items-center gap-2">
-            Services
-            <img src="/assets/images/arrow_down.png" alt="arrow down" />
+            <div
+              className={`p-1 flex items-center gap-1 ${
+                language.substring(0, 2) === "ar" ? "flex-row-reverse" : ""
+              }`}
+            >
+              {t("navbar.services")}
+              <img src="/assets/images/arrow_down.png" alt="arrow down" />
+            </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuContent className="mt-3">
+            <DropdownMenuLabel
+              className={`${
+                language.substring(0, 2) === "ar" ? "text-right" : ""
+              } w-full`}
+            >
+              {t("navbar.services")}
+            </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem className="w-full">
+              <div
+                className={`${
+                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                } w-full`}
+              >
+                وفي
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="w-full">
+              <div
+                className={`${
+                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                } w-full`}
+              >
+                Billing
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="w-full">
+              <div
+                className={`${
+                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                } w-full`}
+              >
+                Team
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem className="w-full">
+              <div
+                className={`${
+                  language.substring(0, 2) === "ar" ? "text-right" : ""
+                } w-full`}
+              >
+                Subscription
+              </div>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 

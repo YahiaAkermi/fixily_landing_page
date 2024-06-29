@@ -6,6 +6,7 @@ import HowSection from "./components/sections/HowSection";
 import EmploymentSection from "./components/sections/EmploymentSection";
 import QaSection from "./components/sections/QaSection";
 import ArticleSection from "./components/sections/ArticleSection";
+import Footer from "./components/sections/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <EmploymentSection />
       <QaSection />
       <ArticleSection />
+      <Footer />
     </>
   );
 }

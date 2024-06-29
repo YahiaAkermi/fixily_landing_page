@@ -19,6 +19,11 @@ i18n
             seconnecter: "Se Connecter",
             mesdemandes: "Mes Demandes",
             services: "Services",
+            language: {
+              language: "language",
+              arabe: "arabe",
+              francais: "français",
+            },
           },
           hero: {
             h1: "Les Meilleurs Professionnels en Algérie:<br /> Qualifiés, à Proximité et à Votre Service!",
@@ -61,6 +66,16 @@ i18n
             h1: "Articles Récents",
             btn_text: "Tous les articles",
           },
+          footer: {
+            txt_below_logo:
+              "Besoin d’aide ? Trouvez des artisans de<br/> confiance et qualifiés sur Fixily pour <br/>toutes vos tâches !",
+            contanctez_nous: "Contactez-nous",
+            copyright: "Copyright © Fixily",
+            droits: "Tous droits réservés",
+            mentions: "Mentions Légales",
+            condition: "Conditions Générales D'utilisation",
+            politique: "Politique de Confidentialité",
+          },
         },
       },
       ar: {
@@ -69,14 +84,20 @@ i18n
             rejoindre: "انضم",
             seconnecter: "تسجيل الدخول",
             mesdemandes: "طلباتي",
+            services: "الخدمات",
+            language: {
+              language: "اللغة",
+              arabe: "العربية",
+              francais: "الفرنسية",
+            },
           },
           hero: {
-            h1: "أفضل المهنيين في الجزائر:<br /> مؤهلون، قريبون، وفي خدمتك!",
+            h1: "أفضل المهنيين في الجزائر<br /> مؤهلون، قريبون، وفي خدمتك!",
             subtitle: ": قم بتحميل التطبيق مجاناً على",
           },
           explore: {
             h1: "هل لديك أعمال تحتاج لإنجازها؟ نحن نجد لك شخصاً في بضع دقائق",
-            placeholder: "Trouvez une service...",
+            placeholder: "ابحث عن خدمة",
           },
           categories: {
             h1: "استكشف فئاتنا",
@@ -89,8 +110,8 @@ i18n
           },
           workersSection: {
             h1: "هل لديك مهارة؟",
-            Subtitle:
-              "اكسب المزيد من المال وطور عملك مع Fixily، احصل على المزيد من العملاء في منطقتك.",
+            subtitle:
+              "اكسب المزيد من المال وطور عملك مع Fixily، احصل على المزيد من العملاء في منطقتك",
             para: "هو الطريقة الموثوقة للحصول على العمل الذي تريده. احصل على تدفق مستمر من المهام المحلية التي تتناسب مع مهاراتك. يمكنك قبول مشاريع كبيرة أو أعمال صغيرة لملء جدولك - الخيار لك Fixily",
           },
           qa: {
@@ -110,6 +131,16 @@ i18n
           articles: {
             h1: "مقالات حديثة",
             btn_text: "جميع المقالات",
+          },
+          footer: {
+            txt_below_logo:
+              "تحتاج مساعدة؟ اعثر على حرفيين موثوقين ومؤهلين على فيكسيلي لجميع مهامك",
+            contanctez_nous: "اتصل بنا",
+            copyright: "حقوق الطبع والنشر © فيكسيلي",
+            droits: "جميع الحقوق محفوظة",
+            mentions: "الشروط القانونية",
+            condition: "شروط الاستخدام العامة",
+            politique: "سياسة الخصوصية",
           },
         },
       },
