@@ -19,7 +19,7 @@ const HowSection = () => {
         <p className="text-lightblack">
           <Trans i18nKey="howSection.para" />
         </p>
-        <GridSteps steps={steps} />
+        <GridSteps steps={steps} showEtape={true} />
       </div>
     </section>
   );

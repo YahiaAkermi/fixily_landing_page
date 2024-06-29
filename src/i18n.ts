@@ -59,6 +59,7 @@ i18n
           },
           articles: {
             h1: "Articles Récents",
+            btn_text: "Tous les articles",
           },
         },
       },
@@ -108,6 +109,7 @@ i18n
           },
           articles: {
             h1: "مقالات حديثة",
+            btn_text: "جميع المقالات",
           },
         },
       },

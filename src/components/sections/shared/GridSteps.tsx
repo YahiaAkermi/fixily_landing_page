@@ -30,22 +30,28 @@ const GridSteps = ({ steps, showEtape }: StepsProps) => {
             <img
               src={step.imgUrl}
               alt={step.title_fr}
-              className="object-cover h-[250px] w-[250px]"
+              className={`object-cover h-[250px] w-[250px] ${
+                !showEtape ? "rounded-lg w-[300px]" : ""
+              }`}
             />
-            <div className="flex flex-col gap-3 text-center">
-              <h3
-                className={`text-[24px]  font-semibold text-myblack text-center ${
-                  !showEtape ? "hidden" : "inline-block"
-                }`}
-              >
-                {`${t("howSection.etape")} ${index + 1}`}
-              </h3>
+            <div
+              className={`flex flex-col gap-3 text-center ${
+                !showEtape ? "max-sm:px-3 max-w-[400px]" : ""
+              }`}
+            >
+              {showEtape && (
+                <h3
+                  className={`text-[24px]  font-semibold text-myblack text-center`}
+                >
+                  {`${t("howSection.etape")} ${index + 1}`}
+                </h3>
+              )}
               <p className="text-[24px]  font-semibold text-myblack text-center">
                 {navigator.language.substring(0, 2) === "ar"
                   ? step.title_ar
                   : step.title_fr}
               </p>
-              <p className="text-lightblack">
+              <p className={`text-lightblack`}>
                 {navigator.language.substring(0, 2) === "ar"
                   ? step.content_ar
                   : step.content_fr}
