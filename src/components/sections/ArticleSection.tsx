@@ -4,12 +4,8 @@ import GridSteps from "./shared/GridSteps";
 import { articles } from "@/data/data";
 
 const ArticleSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-  }, []);
   return (
     <section className="w-full flex flex-col justify-between items-center gap-9 my-[80px] font-lato">
       <h1 className="text-[46px] max-md:text-[24px] max-lg:text-[32px] font-semibold text-myblack text-center">

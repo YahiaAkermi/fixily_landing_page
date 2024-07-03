@@ -11,6 +11,8 @@ type CategoryProps = {
 };
 
 const GridList = ({ categories, language }: CategoryProps) => {
+  console.log(language.substring(0, 2));
+
   return (
     <ul className="grid-container">
       {categories.map((category) => (
@@ -20,11 +22,17 @@ const GridList = ({ categories, language }: CategoryProps) => {
               // category.image ||
               "/assets/images/renovation.png"
             }
-            alt={language === "ar" ? category.image : category.name_en}
+            alt={
+              language.substring(0, 2) === "ar"
+                ? category.image
+                : category.name_en
+            }
             className="object-cover"
           />
           <h3 className="text-[24px] font-semibold text-myblack text-center">
-            {language === "ar" ? category.name_ar : category.name_en}
+            {language.substring(0, 2) === "ar"
+              ? category.name_ar
+              : category.name_en}
           </h3>
         </li>
       ))}

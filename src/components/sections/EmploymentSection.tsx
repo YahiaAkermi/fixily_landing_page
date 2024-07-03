@@ -4,13 +4,13 @@ import { Trans, useTranslation } from "react-i18next";
 const EmploymentSection = () => {
   const { t, i18n } = useTranslation();
 
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || i18n.language
+  );
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(i18n.language);
+  }, [i18n.language]);
   return (
     <section
       className={`h-auto w-full flex justify-center items-center font-lato  py-8 `}

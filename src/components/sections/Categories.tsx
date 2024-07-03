@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import GridList from "./shared/GridList";
-import { categories } from "@/data/data";
+// import { categories } from "@/data/data";
 import axios from "axios";
+import Explore from "./Explore";
 
 const Categories = () => {
   const { t, i18n } = useTranslation();
   const [categories, setCategories] = useState(null || []);
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || i18n.language
+  );
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(i18n.language);
+  }, [i18n.language]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,8 +31,10 @@ const Categories = () => {
 
     fetchData();
   }, []);
+
   return (
     <section className="w-full flex flex-col justify-between items-center gap-9 my-5 font-lato">
+      <Explore />
       <h1 className="text-[46px] max-md:text-[24px] max-lg:text-[32px] font-semibold text-myblack text-center">
         {t("categories.h1")}
       </h1>

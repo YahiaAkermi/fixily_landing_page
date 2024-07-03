@@ -9,13 +9,13 @@ import { useEffect, useState } from "react";
 
 const QaSection = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || i18n.language
+  );
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(i18n.language);
+  }, [i18n.language]);
 
   return (
     <section className="h-auto w-full py-6 font-lato">
@@ -29,14 +29,14 @@ const QaSection = () => {
         <Accordion
           type="single"
           collapsible
-          dir={language.substring(0, 2) === "ar" ? "rtl" : "ltr"}
+          dir={language === "ar" ? "rtl" : "ltr"}
           className="w-full border border-myblack rounded-xl px-4 py-4"
         >
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
+                  language === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q1")}
@@ -54,7 +54,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
+                  language === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q2")}
@@ -72,7 +72,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
+                  language === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q3")}
@@ -90,7 +90,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
+                  language === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q4")}
@@ -108,7 +108,7 @@ const QaSection = () => {
             <AccordionTrigger className="text-[24px] text-myblack font-semibold">
               <div
                 className={`w-full ${
-                  language.substring(0, 2) === "ar" ? "text-right" : "text-left"
+                  language === "ar" ? "text-right" : "text-left"
                 } px-3`}
               >
                 {t("qa.q5")}

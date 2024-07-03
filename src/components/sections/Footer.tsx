@@ -1,19 +1,15 @@
 import { Separator } from "@radix-ui/react-dropdown-menu";
-import { useEffect, useState } from "react";
+
 import { Trans, useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const [agencyDetails, setAgencyDetails] = useState({
+  const agencyDetails = {
     email: "Chaker@fixily.com",
     mobileNumber: "0770 12 23 34",
-  });
+  };
 
-  useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-  }, []);
   return (
     <footer className="h-auto bg-secondary font-lato">
       <div className="w-full flex flex-col gap-9 p-8 lg:px-[200px] lg:py-[100px] max-lg:px-[30px]">

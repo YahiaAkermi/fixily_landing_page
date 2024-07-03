@@ -3,23 +3,21 @@ import { useTranslation, Trans } from "react-i18next";
 
 const HeroSection = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState("");
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(localStorage.getItem("language") || i18n.language);
+  }, [i18n.language]);
 
   return (
     <section
       className={`px-20 h-auto bg-secondary flex ${
-        language.substring(0, 2) == "ar" ? "flex-row-reverse" : ""
+        language == "ar" ? "flex-row-reverse" : ""
       } items-center justify-around font-lato w-full max-lg:flex-col max-lg:gap-7  max-lg:py-4 max-md:gap-5 max-md:pt-6`}
     >
       <div
         className={`flex flex-col justify-around gap-4 max-md:items-center  ${
-          language.substring(0, 2) == "ar" ? "text-right" : ""
+          language == "ar" ? "text-right" : ""
         } `}
       >
         <h1 className="text-[46px] max-md:text-[30px] font-semibold text-myblack">

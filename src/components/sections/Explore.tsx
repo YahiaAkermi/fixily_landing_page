@@ -3,13 +3,11 @@ import { useTranslation } from "react-i18next";
 
 const Explore = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState(localStorage.getItem("language"));
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(i18n.language);
+  }, [i18n.language]);
   return (
     <section className="h-[400px] flex justify-center items-center xl:px-[400px] max-lg:px-[200px] max-md:px-[30px] font-lato">
       <div className="w-full  flex flex-col justify-around items-center gap-5">
@@ -21,15 +19,13 @@ const Explore = () => {
             type="email"
             placeholder={t("explore.placeholder")}
             className={`border-none ring-0 outline-none ml-2 h-[80px] w-[70%] ${
-              language.substring(0, 2) == "ar"
-                ? "text-right ml-[120px] max-sm:ml-[80px]"
-                : ""
+              language == "ar" ? "text-right ml-[120px] max-sm:ml-[80px]" : ""
             } `}
           />
 
           <div
             className={`bg-myblue w-[55px] h-[55px] flex justify-center items-center rounded-lg absolute ${
-              language.substring(0, 2) == "ar" ? "left-2" : "right-2"
+              language == "ar" ? "left-2" : "right-2"
             }  hover:cursor-pointer`}
           >
             <img src="/assets/images/loop.png" alt="" />

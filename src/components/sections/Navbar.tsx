@@ -27,13 +27,16 @@ import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || i18n.language
+  );
 
   useEffect(() => {
     const lng = navigator.language;
     i18n.changeLanguage(lng);
     setLanguage(lng);
-  }, [i18n]);
+    localStorage.setItem("language", lng);
+  }, []);
 
   const handleLanguageChange = (value: string) => {
     //for resposivity
@@ -41,6 +44,9 @@ const Navbar = () => {
 
     //changing the website language
     i18n.changeLanguage(value);
+
+    //using local storage to store the current lang
+    localStorage.setItem("language", value);
   };
 
   return (
@@ -65,18 +71,14 @@ const Navbar = () => {
             <SelectGroup>
               <SelectItem value="fr">
                 <div
-                  className={`${
-                    language.substring(0, 2) === "ar" ? "text-right" : ""
-                  } w-full`}
+                  className={`${language === "ar" ? "text-right" : ""} w-full`}
                 >
                   {t("navbar.language.francais")}
                 </div>
               </SelectItem>
               <SelectItem value="ar">
                 <div
-                  className={`${
-                    language.substring(0, 2) === "ar" ? "text-right" : ""
-                  } w-full`}
+                  className={`${language === "ar" ? "text-right" : ""} w-full`}
                 >
                   {t("navbar.language.arabe")}
                 </div>
@@ -89,7 +91,7 @@ const Navbar = () => {
           <DropdownMenuTrigger className="text-myblack text-base font-medium flex items-center gap-2">
             <div
               className={`p-1 flex items-center gap-1 ${
-                language.substring(0, 2) === "ar" ? "flex-row-reverse" : ""
+                language === "ar" ? "flex-row-reverse" : ""
               }`}
             >
               {t("navbar.services")}
@@ -98,45 +100,35 @@ const Navbar = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="mt-3">
             <DropdownMenuLabel
-              className={`${
-                language.substring(0, 2) === "ar" ? "text-right" : ""
-              } w-full`}
+              className={`${language === "ar" ? "text-right" : ""} w-full`}
             >
               {t("navbar.services")}
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="w-full">
               <div
-                className={`${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
-                } w-full`}
+                className={`${language === "ar" ? "text-right" : ""} w-full`}
               >
                 وفي
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem className="w-full">
               <div
-                className={`${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
-                } w-full`}
+                className={`${language === "ar" ? "text-right" : ""} w-full`}
               >
                 Billing
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem className="w-full">
               <div
-                className={`${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
-                } w-full`}
+                className={`${language === "ar" ? "text-right" : ""} w-full`}
               >
                 Team
               </div>
             </DropdownMenuItem>
             <DropdownMenuItem className="w-full">
               <div
-                className={`${
-                  language.substring(0, 2) === "ar" ? "text-right" : ""
-                } w-full`}
+                className={`${language === "ar" ? "text-right" : ""} w-full`}
               >
                 Subscription
               </div>
@@ -182,7 +174,7 @@ const Navbar = () => {
                     <SelectItem value="fr">
                       <div
                         className={`${
-                          language.substring(0, 2) === "ar" ? "text-right" : ""
+                          language === "ar" ? "text-right" : ""
                         } w-full`}
                       >
                         {t("navbar.language.francais")}
@@ -191,7 +183,7 @@ const Navbar = () => {
                     <SelectItem value="ar">
                       <div
                         className={`${
-                          language.substring(0, 2) === "ar" ? "text-right" : ""
+                          language === "ar" ? "text-right" : ""
                         } w-full`}
                       >
                         {t("navbar.language.arabe")}
@@ -205,9 +197,7 @@ const Navbar = () => {
                 <DropdownMenuTrigger className="text-myblack text-base font-medium flex items-center gap-2 hover:bg-secondary p-2 rounded-lg">
                   <div
                     className={`p-1 flex items-center gap-1 w-full ${
-                      language.substring(0, 2) === "ar"
-                        ? "flex-row-reverse"
-                        : ""
+                      language === "ar" ? "flex-row-reverse" : ""
                     }`}
                   >
                     <div className="flex justify-center items-center w-full">
@@ -219,7 +209,7 @@ const Navbar = () => {
                 <DropdownMenuContent className="mt-3">
                   <DropdownMenuLabel
                     className={`${
-                      language.substring(0, 2) === "ar" ? "text-right" : ""
+                      language === "ar" ? "text-right" : ""
                     } w-full`}
                   >
                     {t("navbar.services")}
@@ -228,7 +218,7 @@ const Navbar = () => {
                   <DropdownMenuItem className="w-full">
                     <div
                       className={`${
-                        language.substring(0, 2) === "ar" ? "text-right" : ""
+                        language === "ar" ? "text-right" : ""
                       } w-full`}
                     >
                       وفي
@@ -237,7 +227,7 @@ const Navbar = () => {
                   <DropdownMenuItem className="w-full">
                     <div
                       className={`${
-                        language.substring(0, 2) === "ar" ? "text-right" : ""
+                        language === "ar" ? "text-right" : ""
                       } w-full`}
                     >
                       Billing
@@ -246,7 +236,7 @@ const Navbar = () => {
                   <DropdownMenuItem className="w-full">
                     <div
                       className={`${
-                        language.substring(0, 2) === "ar" ? "text-right" : ""
+                        language === "ar" ? "text-right" : ""
                       } w-full`}
                     >
                       Team
@@ -255,7 +245,7 @@ const Navbar = () => {
                   <DropdownMenuItem className="w-full">
                     <div
                       className={`${
-                        language.substring(0, 2) === "ar" ? "text-right" : ""
+                        language === "ar" ? "text-right" : ""
                       } w-full`}
                     >
                       Subscription

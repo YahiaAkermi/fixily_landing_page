@@ -5,17 +5,17 @@ import { steps } from "@/data/data";
 
 const HowSection = () => {
   const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState(navigator.language);
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || i18n.language
+  );
 
   useEffect(() => {
-    const lng = navigator.language;
-    i18n.changeLanguage(lng);
-    setLanguage(lng);
-  }, []);
+    setLanguage(i18n.language);
+  }, [i18n.language]);
   return (
     <section
       className={`h-auto w-full bg-secondary py-14 font-lato px-[180px] max-md:px-7 ${
-        language.substring(0, 2) == "ar" ? "text-right" : ""
+        language == "ar" ? "text-right" : ""
       }`}
     >
       <div className="flex flex-col justify-between gap-8">
