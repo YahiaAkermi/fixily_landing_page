@@ -11,8 +11,6 @@ type CategoryProps = {
 };
 
 const GridList = ({ categories, language }: CategoryProps) => {
-  console.log(language.substring(0, 2));
-
   return (
     <ul className="grid-container">
       {categories.map((category) => (

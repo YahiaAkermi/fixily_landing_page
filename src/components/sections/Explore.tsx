@@ -1,13 +1,22 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const Explore = () => {
+type ExploreProps = {
+  onSearchCategories: (term: string) => void;
+};
+
+const Explore = ({ onSearchCategories }: ExploreProps) => {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState(localStorage.getItem("language"));
 
   useEffect(() => {
     setLanguage(i18n.language);
   }, [i18n.language]);
+
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    onSearchCategories(event.target.value);
+  };
+
   return (
     <section className="h-[400px] flex justify-center items-center xl:px-[400px] max-lg:px-[200px] max-md:px-[30px] font-lato">
       <div className="w-full  flex flex-col justify-around items-center gap-5">
@@ -21,10 +30,11 @@ const Explore = () => {
             className={`border-none ring-0 outline-none ml-2 h-[80px] w-[70%] ${
               language == "ar" ? "text-right ml-[120px] max-sm:ml-[80px]" : ""
             } `}
+            onChange={handleSearch}
           />
 
           <div
-            className={`bg-myblue w-[55px] h-[55px] flex justify-center items-center rounded-lg absolute ${
+            className={`bg-myblue hover:bg-blue-400 w-[55px] h-[55px] flex justify-center items-center rounded-lg absolute ${
               language == "ar" ? "left-2" : "right-2"
             }  hover:cursor-pointer`}
           >
