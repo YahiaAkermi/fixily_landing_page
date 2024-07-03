@@ -16,7 +16,13 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -27,11 +33,19 @@ const Navbar = () => {
     const lng = navigator.language;
     i18n.changeLanguage(lng);
     setLanguage(lng);
-  }, []);
+  }, [i18n]);
+
+  const handleLanguageChange = (value: string) => {
+    //for resposivity
+    setLanguage(value);
+
+    //changing the website language
+    i18n.changeLanguage(value);
+  };
 
   return (
     <nav className="w-full flex justify-between items-center text-4xl h-[100px] px-4 xl:px-20 bg-secondary">
-      <div className="">
+      <div>
         <img
           src="/assets/images/logo.png"
           alt=""
@@ -39,7 +53,7 @@ const Navbar = () => {
         />
       </div>
       <div className="flex gap-2 items-center justify-evenly w-full max-w-[70%] hidden md:flex">
-        <Select>
+        <Select onValueChange={handleLanguageChange}>
           <SelectTrigger className="text-myblack font-bold w-[180px] bg-secondary">
             <img src="/assets/images/translate.png" alt="translate" />
             <SelectValue
@@ -49,7 +63,7 @@ const Navbar = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="français">
+              <SelectItem value="fr">
                 <div
                   className={`${
                     language.substring(0, 2) === "ar" ? "text-right" : ""
@@ -58,7 +72,7 @@ const Navbar = () => {
                   {t("navbar.language.francais")}
                 </div>
               </SelectItem>
-              <SelectItem value="arabe">
+              <SelectItem value="ar">
                 <div
                   className={`${
                     language.substring(0, 2) === "ar" ? "text-right" : ""
@@ -151,8 +165,11 @@ const Navbar = () => {
             </Button>
           </SheetTrigger>
           <SheetContent>
+            <SheetTitle></SheetTitle>
+            <SheetDescription></SheetDescription>
+
             <div className="flex flex-col gap-9 p-4">
-              <Select>
+              <Select onValueChange={handleLanguageChange}>
                 <SelectTrigger className="text-myblack font-bold w-full bg-secondary">
                   <img src="/assets/images/translate.png" alt="translate" />
                   <SelectValue
@@ -162,7 +179,7 @@ const Navbar = () => {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="français">
+                    <SelectItem value="fr">
                       <div
                         className={`${
                           language.substring(0, 2) === "ar" ? "text-right" : ""
@@ -171,7 +188,7 @@ const Navbar = () => {
                         {t("navbar.language.francais")}
                       </div>
                     </SelectItem>
-                    <SelectItem value="arabe">
+                    <SelectItem value="ar">
                       <div
                         className={`${
                           language.substring(0, 2) === "ar" ? "text-right" : ""
@@ -196,7 +213,6 @@ const Navbar = () => {
                     <div className="flex justify-center items-center w-full">
                       {t("navbar.services")}
                     </div>
-
                     <img src="/assets/images/arrow_down.png" alt="arrow down" />
                   </div>
                 </DropdownMenuTrigger>
